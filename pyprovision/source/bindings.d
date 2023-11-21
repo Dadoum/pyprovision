@@ -24,6 +24,24 @@ extern(C) void PydMain() {
         Def!(ADI.dispose, PyName!"dispose"),
         Def!(ADI.requestOTP, PyName!"request_otp"),
     )();
+    wrap_class!(
+        ADI.OneTimePassword,
+        PyName!"OneTimePassword",
+        Property!(ADI.OneTimePassword.oneTimePassword, PyName!"one_time_password"),
+        Property!(ADI.OneTimePassword.machineIdentifier, PyName!"machine_identifier")
+    )();
+    wrap_class!(
+        ADI.ClientProvisioningIntermediateMetadata,
+        PyName!"ClientProvisioningIntermediateMetadata",
+        Property!(ADI.ClientProvisioningIntermediateMetadata.clientProvisioningIntermediateMetadata, PyName!"client_provisioning_intermediate_metadata"),
+        Property!(ADI.ClientProvisioningIntermediateMetadata.session, PyName!"session")
+    )();
+    wrap_class!(
+        ADI.SynchronizationResumeMetadata,
+        PyName!"SynchronizationResumeMetadata",
+        Property!(ADI.SynchronizationResumeMetadata.synchronizationResumeMetadata, PyName!"synchronization_resume_metadata"),
+        Property!(ADI.SynchronizationResumeMetadata.machineIdentifier, PyName!"machine_identifier")
+    )();
     
     wrap_class!(
         Device,
