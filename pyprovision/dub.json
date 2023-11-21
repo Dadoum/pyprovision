@@ -1,0 +1,20 @@
+{
+	"authors": [
+		"Dadoum"
+	],
+	"copyright": "Copyright © 2023, Dadoum",
+	"description": "Python bindings to Provision",
+	"license": "LGPL-v2.1-or-later",
+	"name": "pyprovision",
+	"targetType": "dynamicLibrary",
+	"dependencies": {
+		"provision": {
+        	    "repository": "git+https://github.com/Dadoum/Provision.git",
+	            "version": "60361b977089e251992365df2f00cba5f77d5449"
+		},
+		"pyd": "~>0.14.4"
+	},
+	"subConfigurations": {
+		"pyd": "python38"
+	}
+}
