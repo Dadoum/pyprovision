@@ -1,5 +1,8 @@
 module bindings;
 
+version = Python_3_0_Or_Later;
+version = PydPythonExtension;
+
 import deimos.python.Python;
 import pyd.pyd;
 
@@ -70,8 +73,28 @@ import pyd.thread;
 import deimos.python.Python;
 import core.runtime;
 
+extern(C) shared bool _D2rt6dmain212_d_isHaltingOb;
+alias _D2rt6dmain212_d_isHaltingOb _d_isHalting;
+extern(C) {
+
+    void rt_init();
+    void rt_term();
+
+    pragma(crt_constructor)
+    void hacky_init() {
+        rt_init();
+    }
+
+    pragma(crt_destructor)
+    void hacky_fini() {
+        if(!_d_isHalting){
+            rt_term();
+        }
+    }
+
+} /* extern(C) */
+
 extern(C) export PyObject* PyInit_pyprovision() {
-    Runtime.initialize();
     return pyd.exception.exception_catcher(delegate PyObject*() {
         pyd.thread.ensureAttached();
         pyd.def.pyd_module_name = "pyprovision";

@@ -9,12 +9,68 @@
 	"targetType": "dynamicLibrary",
 	"dependencies": {
 		"provision": {
-        	    "repository": "git+https://github.com/Dadoum/Provision.git",
-	            "version": "2e4146d4fb6e1abf51bfa66a9735552b66745d22"
+			"repository": "git+https://github.com/Dadoum/Provision.git",
+			"version": "2e4146d4fb6e1abf51bfa66a9735552b66745d22"
 		},
-		"pyd": "~>0.14.4"
+		"provision": {
+			"repository": "git+https://github.com/Dadoum/pyd.git",
+			"version": "1bf6b6c896f9d55fe2d379a1d6ed3c3bd367123c"
+		},
 	},
-	"subConfigurations": {
-		"pyd": "python38"
-	}
+	"configurations": [
+		{
+			"name": "python33",
+			"subConfigurations": {
+				"pyd": "python33"
+			}
+		},
+		{
+			"name": "python34",
+			"subConfigurations": {
+				"pyd": "python34"
+			}
+		},
+		{
+			"name": "python35",
+			"subConfigurations": {
+				"pyd": "python35"
+			}
+		},
+		{
+			"name": "python36",
+			"subConfigurations": {
+				"pyd": "python36"
+			}
+		},
+		{
+			"name": "python37",
+			"subConfigurations": {
+				"pyd": "python37"
+			}
+		},
+		{
+			"name": "python38",
+			"subConfigurations": {
+				"pyd": "python38"
+			}
+		},
+		{
+			"name": "python39",
+			"subConfigurations": {
+				"pyd": "python39"
+			}
+		},
+		{
+			"name": "python310",
+			"subConfigurations": {
+				"pyd": "python310"
+			}
+		},
+		{
+			"name": "python311",
+			"subConfigurations": {
+				"pyd": "python311"
+			}
+		},
+	]
 }

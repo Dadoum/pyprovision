@@ -1,2 +1,6 @@
 *.egg-info/
 build/
+dist/
+/libraries/
+/adi-data/
+/example-device.json
