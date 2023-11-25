@@ -24,9 +24,11 @@ class DubBuildExt(build_ext):
         super().run()
 
     def build_dub(self, ext):
+        setup_folder = pathlib.Path(os.path.dirname(os.path.abspath(__file__)))
         cwd = pathlib.Path().absolute()
-        print(cwd)
-        extdir_real = pathlib.Path(ext.name)
+
+        extdir_real = setup_folder / ext.name
+        print(os.listdir(setup_folder))
         extdir = pathlib.Path(self.get_ext_fullpath(ext.name))
         extdir.parent.mkdir(parents=True, exist_ok=True)
 
@@ -42,8 +44,8 @@ class DubBuildExt(build_ext):
 setup(
     name='pyprovision',
     version='0.0.1',
-#    packages=['pyprovision'],
-    ext_modules=[DubExtension('pyprovision', ["pyprovision"])],
+    packages=['pyprovision'],
+    ext_modules=[DubExtension('pyprovision')],
     cmdclass={
         'build_ext': DubBuildExt,
     }

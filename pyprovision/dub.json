@@ -12,7 +12,7 @@
 			"repository": "git+https://github.com/Dadoum/Provision.git",
 			"version": "2e4146d4fb6e1abf51bfa66a9735552b66745d22"
 		},
-		"provision": {
+		"pyd": {
 			"repository": "git+https://github.com/Dadoum/pyd.git",
 			"version": "1bf6b6c896f9d55fe2d379a1d6ed3c3bd367123c"
 		},
