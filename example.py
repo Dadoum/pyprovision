@@ -12,7 +12,7 @@ adi = ADI("./libraries/")
 adi.provisioning_path = "./adi-data/"
 
 # where apple device info will be stored (to persist adi data across sessions)
-# device = Device("./example-device.json")
+device = Device("./example-device.json")
 if not device.initialized:
     # Pretend to be a MacBook Pro
     device.server_friendly_description = "<MacBookPro13,2> <macOS;13.1;22C65> <com.apple.AuthKit/1 (com.apple.dt.Xcode/3594.4.19)>"
