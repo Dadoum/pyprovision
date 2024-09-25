@@ -34,7 +34,7 @@ class DubBuildExt(build_ext):
 
         os.chdir(extdir_real) # ext.source_dir)
         major, minor = sys.version_info[:2]
-        minor = minor if minor <= 11 else 11
+        assert minor <= 13, f"Unsupported Python version (max supported version is 3.13, you are on {major}.{minor})"
         self.spawn(['dub', "build", "-c", f"python{major}{minor}" , "-b", "release"])
         print(extdir)
         os.chdir(str(cwd))
