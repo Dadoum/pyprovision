@@ -14,7 +14,7 @@
 		},
 		"pyd": {
 			"repository": "git+https://github.com/Dadoum/pyd.git",
-			"version": "1bf6b6c896f9d55fe2d379a1d6ed3c3bd367123c"
+			"version": "747fba00d2fad7e86b869212e1b5e2fccd498a8e"
 		},
 	},
 	"configurations": [
@@ -70,6 +70,18 @@
 			"name": "python311",
 			"subConfigurations": {
 				"pyd": "python311"
+			}
+		},
+		{
+			"name": "python312",
+			"subConfigurations": {
+				"pyd": "python312"
+			}
+		},
+		{
+			"name": "python313",
+			"subConfigurations": {
+				"pyd": "python313"
 			}
 		},
 	]
